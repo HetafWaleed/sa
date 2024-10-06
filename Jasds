@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class ChatBot 
+{
+
+    public Scanner scanner;
+
+    public ChatBot() {
+        scanner = new Scanner(System.in);
+    }
+
+    public void introduceBot() {
+        System.out.println("Hello, I am ChatBot!! Please enter you name");
+    }
+
+    public String getName() {
+        return scanner.nextLine();
+    }
+
+    public void greetUser(String name) {
+        System.out.println("Hello, " + name + "!");
+    }
+
+    public String askUserFeeling() {
+        System.out.print("How are you feeling today? ");
+        return scanner.nextLine();
+    }
+
+    public void respondToFeeling(String feeling) {
+        switch (feeling) {
+            case "happy":
+                System.out.println("Glad to hear you're feeling happy!");
+                break;
+            case "sad":
+                System.out.println("I'm sorry to hear that :(");
+                break;
+            case "angry":
+                System.out.println("If you wanna talk i'm here for you");
+                break;
+            case "excited":
+                System.out.println("That's great!!");
+                break;
+            default:
+                System.out.println("Tell me more about how you're feeling.");
+                break;
+        }
+    }
+        public static void main(String[] args) {
+        ChatBot chatBot = new ChatBot();
+        chatBot.introduceBot();
+        String name = chatBot.getName();
+        chatBot.greetUser(name);
+        String feeling = chatBot.askUserFeeling();
+        chatBot.respondToFeeling(feeling);
+        }
+
+
+}
