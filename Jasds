@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ChatBot 
 {
 
-    public Scanner scanner;
+    private Scanner scanner;
 
     public ChatBot() {
         scanner = new Scanner(System.in);
